@@ -1,0 +1,27 @@
+.note{
+    padding: 25px;
+    height: 280px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(167, 120, 210);
+    border-radius: 30px;
+}
+
+.note_text{
+    flex: 1;
+    resize: none;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    border: none;
+    outline: none;
+}
+
+#delete-button{
+    float: right;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: medium;
+}

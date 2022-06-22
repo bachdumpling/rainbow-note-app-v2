@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "hello",
+      "time": "13 July",
+      "color": "light blue"
+    },
+    {
+      "id": 2,
+      "text": "hello",
+      "time": "12 June",
+      "color": "yellow"
+    }
+  ]
+}
