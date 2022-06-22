@@ -13,7 +13,7 @@ function LoginForm({ Login, error}){
       <div>
         <form onSubmit={submitHandler}>
           <div class="form-group">
-            <h2 class="form-label">Account Login</h2>
+            <h2 class="form-label text-primary">Account Login</h2>
             {(error!== "") ? (<div>{error}</div>) : "" }
           </div>
           <div class="form-floating mb-1">
@@ -23,7 +23,7 @@ function LoginForm({ Login, error}){
           <div class="form-floating mb-1">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value={details.password} onChange={e=>{setDetails({...details, password:[e.target.value]})}}/><br/>
             <label for="floatingPassword">Password:</label>
-            <button type="submit" value="LOGIN">Log in</button>
+            <button class="btn btn-outline-dark" type="submit" value="LOGIN">Log in</button>
           </div>
         </form>
       </div>

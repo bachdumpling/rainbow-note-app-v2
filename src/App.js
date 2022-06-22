@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import NoteContainer from './Components/NoteContainer/NoteContainer';
 import SideBar from './Components/SideBar/SideBar';
+import Header from './Components/Header';
 import LoginContainer from './Components/LoginContainer';
 import 'bootswatch/dist/simplex/bootstrap.min.css';
+
 
 
 function App() {
@@ -45,11 +47,11 @@ function App() {
   function handleSubmit(e){
     e.preventDefault();
     console.log("submitting")
-    console.log(e.target.text)
+    console.log(e.target.value)
         const newNote = {
-            text: e.target.text.value,
+            text: e.target.value,
             time: Date.now(),
-            color: e.target.color.value
+            color: e.target.value
         }
 
         fetch(`http://localhost:3000/notes`, {
@@ -63,11 +65,12 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+        <Header />
         <LoginContainer />
-      </div>
       <br/>
+      <div>
       <SideBar addNote={addNote} />
+      </div>
       <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>
     </div>
   );
