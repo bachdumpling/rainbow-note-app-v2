@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import NoteContainer from './Components/NoteContainer/NoteContainer';
 import SideBar from './Components/SideBar/SideBar';
+import LoginContainer from './Components/LoginContainer';
+import 'bootswatch/dist/simplex/bootstrap.min.css';
 
 
 function App() {
@@ -61,7 +63,10 @@ function App() {
 
   return (
     <div className="App">
-      
+      <div>
+        <LoginContainer />
+      </div>
+      <br/>
       <SideBar addNote={addNote} />
       <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>
     </div>
