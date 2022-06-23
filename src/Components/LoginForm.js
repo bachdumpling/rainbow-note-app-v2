@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import "./LoginForm.css";
 
 function LoginForm({ Login, error}){
   const [details, setDetails] = useState({username: "", password: ""})
@@ -12,18 +11,16 @@ function LoginForm({ Login, error}){
     return (
       <div>
         <form onSubmit={submitHandler}>
-          <div class="form-group">
-            <h2 class="form-label text-primary">Account Login</h2>
+          <div className="form-group">
+            {/* <h6 class="form-label text-primary">Sign in</h6> */}
             {(error!== "") ? (<div>{error}</div>) : "" }
           </div>
-          <div class="form-floating mb-1">
-            <input type="text" class="form-control" id="floatingInput" placeholder="username" value={details.username} onChange={e=>{setDetails({...details, username:[e.target.value]})}}/>
-            <label for="floatingInput">Username:</label>
+          <div className="mt-2">
+            <input type="text" className="form-control" id="inputDefault" placeholder="Username" value={details.username} onChange={e=>{setDetails({...details, username:[e.target.value]})}}/>
           </div>
-          <div class="form-floating mb-1">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value={details.password} onChange={e=>{setDetails({...details, password:[e.target.value]})}}/><br/>
-            <label for="floatingPassword">Password:</label>
-            <button class="btn btn-outline-dark" type="submit" value="LOGIN">Log in</button>
+          <div className="mt-2">
+            <input type="password" className="form-control" id="inputDefault" placeholder="Password" value={details.password} onChange={e=>{setDetails({...details, password:[e.target.value]})}}/>
+            <button className="btn btn-outline-dark btn-sm mt-2" type="submit" value="Login">Log in</button>
           </div>
         </form>
       </div>

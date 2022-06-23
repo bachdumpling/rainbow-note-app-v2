@@ -29,11 +29,11 @@ function LoginContainer(){
   }
 
   return(
-    <div>
+    <div class="login-container">
         {(data.username !=="")? (
         <div>
-            <h2>Welcome, <span>{data.username}</span></h2>
-            <button type="button" class="btn btn-outline-primary" onClick={Logout}>Logout</button>
+            <h2>Welcome, <span>{data.username}</span>!</h2>
+            <button type="button" class="btn btn-outline-dark btn-sm" onClick={Logout}>Logout</button>
         </div>
         ) : (
         <LoginForm Login={Login} error={error} /> 
@@ -41,5 +41,6 @@ function LoginContainer(){
     </div>
   )
 }
+
 
 export default LoginContainer;

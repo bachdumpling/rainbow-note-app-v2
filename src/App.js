@@ -4,6 +4,7 @@ import NoteContainer from './Components/NoteContainer/NoteContainer';
 import SideBar from './Components/SideBar/SideBar';
 import Header from './Components/Header';
 import LoginContainer from './Components/LoginContainer';
+import Nav from './Components/Nav';
 import 'bootswatch/dist/simplex/bootstrap.min.css';
 
 
@@ -65,15 +66,17 @@ function App() {
 
   return (
     <div className="App">
-        <Header />
-        <LoginContainer />
-      <br/>
+      <Nav />
+      <span><Header /></span><span><LoginContainer /></span>
       <div>
       <SideBar addNote={addNote} />
       </div>
+      <div>
       <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>
+      </div>
     </div>
   );
 }
+  
 
 export default App;

@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-const NavBar =()=>{
+const Navbar =()=>{
     return(
-        <div>
+        <nav className="navbar-items">
+            <div className="navbar-logo">emoji
+            </div>
+            <div className="menu-icon">
+            </div>
             <ul>
-                <li>
+                {/* <li>
                     <Link to="/App">Home</Link>
                 </li>
                 <li>
@@ -13,11 +17,11 @@ const NavBar =()=>{
                 </li>
                 <li>
                     <Link to="/Login">Account</Link>
-                </li>
+                </li> */}
             </ul>
-        </div>
+           
+        </nav>
     )
-
 }
 
-export default NavBar;
+export default Navbar;
