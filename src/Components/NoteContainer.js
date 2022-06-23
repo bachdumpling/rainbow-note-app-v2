@@ -1,6 +1,5 @@
 import React from 'react'
-import Note from '../Note/Note'
-import './NoteContainer.css'
+import Note from './Note'
 
 function NoteContainer({notes, removeNote, handleSubmit, addNote}) {
   

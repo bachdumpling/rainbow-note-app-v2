@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
-import plusIcon from '../../Assets/plus.png'
-import './SideBar.css'
+import plusIcon from './plus.png'
 
 function SideBar({addNote}) {
     const color = ["#fe9b72 ", "#fec971", "#00d4fe", "#b693fd", "#e4ee91"]

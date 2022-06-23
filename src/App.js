@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import NoteContainer from './Components/NoteContainer/NoteContainer';
-import SideBar from './Components/SideBar/SideBar';
-import Header from './Components/Header';
+import NoteContainer from './Components/NoteContainer';
+import SideBar from './Components/SideBar';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
 import 'bootswatch/dist/simplex/bootstrap.min.css';
-
-
 
 function App() {
 
@@ -67,13 +64,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <span><Header /></span><span><LoginContainer /></span>
-      <div>
+      <LoginContainer />
       <SideBar addNote={addNote} />
-      </div>
-      <div>
       <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>
-      </div>
     </div>
   );
 }

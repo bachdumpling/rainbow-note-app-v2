@@ -1,27 +1,31 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
+import Header from './Header'
 
-const Navbar =()=>{
+
+const Nav =()=>{
     return(
-        <nav className="navbar-items">
-            <div className="navbar-logo">emoji
+        <nav className="nav">
+            <div className="navbar-logo">
             </div>
             <div className="menu-icon">
             </div>
             <ul>
-                {/* <li>
-                    <Link to="/App">Home</Link>
-                </li>
                 <li>
-                    <Link to="/Note">Note</Link>
+                    <a href="/Header" className="site-title">
+                    <Header />
+                    </a>
                 </li>
-                <li>
-                    <Link to="/Login">Account</Link>
-                </li> */}
+                <li className='active'>
+                    <a href="/note">Note</a>
+                </li>
+                <li className='active'>
+                    <a href="/about">About</a>
+                </li>
             </ul>
            
         </nav>
     )
 }
 
-export default Navbar;
+export default Nav;
