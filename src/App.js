@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import NoteContainer from './Components/NoteContainer';
-import SideBar from './Components/SideBar';
+//import SideBar from './Components/SideBar';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
 import 'bootswatch/dist/simplex/bootstrap.min.css';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [notes,setNotes] = useState([])
+  const [noteData, setNoteData]= useState([]);
+  const [notes,setNotes] = useState([]);
 
   useEffect(() => {
     getData()
@@ -17,15 +19,14 @@ function App() {
   function getData(){
     fetch(`http://localhost:3000/notes`)
       .then(response => response.json())
-      .then(setNotes)
+      .then(setNoteData)
   }
 
   function addNote(color){
-    const newNote = [...notes]
+    let newNote = [...notes]
 
     newNote.push({
       text: '',
-      time: Date.now(),
       color,
     })
 
@@ -44,29 +45,31 @@ function App() {
 
   function handleSubmit(e){
     e.preventDefault();
-    console.log("submitting")
+    console.log('submitting')
     console.log(e.target.value)
-        const newNote = {
-            text: e.target.value,
-            time: Date.now(),
-            color: e.target.value
-        }
-
-        fetch(`http://localhost:3000/notes`, {
-            method: "POST",
+        fetch('http://localhost:3000/notes', {
+            method: 'POST',
             headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
         },
-            body: JSON.stringify(newNote)
+            body: JSON.stringify({
+              text: e.target.value,
+              color: e.target.color
+            })
         })
   }
 
   return (
     <div className="App">
       <Nav />
-      <LoginContainer />
-      <SideBar addNote={addNote} />
-      <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/LoginContainer'  element={<LoginContainer />} />
+          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {noteData} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
+        </Routes>
+      </div>
+      <div><h4 className="bottom">Thank you for using Rainbow Note!</h4></div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ function LoginContainer(){
       })
     }else{
       //console.log("failed to log in")
-      setError("Credentials don't match!")
+      setError("Invalid input. Try again!")
     }
   }
 
