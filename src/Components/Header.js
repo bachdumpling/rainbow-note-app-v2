@@ -1,16 +1,16 @@
-import React from 'react'
+// import React from 'react'
 
 function Header() {
   return (
     <h1 className="header">
       <em>
-        <span class="text-primary">R</span>
-        <span class="text-secondary">a</span>
-        <span class="text-warning">i</span>
-        <span class="text-danger">n</span>
-        <span class="text-warning">b</span>
-        <span class="text-info">o</span>  
-        <span>w</span>
+        <span className="text-primary">R</span>
+        <span className="text-secondary">a</span>
+        <span className="text-info">i</span>
+        <span className="text-danger">n</span>
+        <span className="text-warning">b</span>
+        <span className="text-info">o</span>  
+        <span className="text-danger">w</span>
         </em> Note
     </h1>
      

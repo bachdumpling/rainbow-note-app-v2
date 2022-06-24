@@ -127,10 +127,7 @@ code {
   font-size: medium;
 }
 
-.bottom {
+#about {
   position:relative;
   text-align: center;
-  font-size: small;
-
-
 }

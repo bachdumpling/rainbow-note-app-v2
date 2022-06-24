@@ -3,8 +3,9 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
-//import 'bootswatch/dist/simplex/bootstrap.min.css';
+import 'bootswatch/dist/simplex/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import About from './Components/About';
 
 function App() {
 
@@ -17,24 +18,20 @@ function App() {
   function getData(){
     fetch(`http://localhost:4000/notes`)
       .then(response => response.json())
-      .then(setNotes)
+      .then(data=> 
+        setNotes(data)
+        )
   }
 
   function addNote(color){
-    const newNote = {
-      text : "",
-      time : "13 July",
-      color : color
-    }
+    let newNote = [...notes]
+//console.log('log')
+    newNote.push({
+      text: '',
+      color,
+    })
 
-    fetch(`http://localhost:4000/notes`, {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json"
-        },
-            body: JSON.stringify(newNote)
-    }).then(response => response.json())
-    .then((data) => setNotes([...notes, data]))
+    setNotes(newNote)
   }
 
   function removeNote(note){
@@ -44,14 +41,20 @@ function App() {
                 "Content-Type": "application/json"
             }
         })
-        getData()
+       getData()
   }
   
   return (
     <div className="App">
-      
-      <SideBar addNote={addNote} />
-      <NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote}/>
+      <Nav />
+      <div className='container'>
+        {/* <h1>hello!</h1> */}
+        <Routes>
+          <Route path='/LoginContainer'  element={<LoginContainer />} />
+          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
+          <Route path='/About' element={<About />} />
+        </Routes>
+      </div>
     </div>
   );
 }
