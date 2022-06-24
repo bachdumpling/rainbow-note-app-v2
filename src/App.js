@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import NoteContainer from './Components/NoteContainer';
-//import SideBar from './Components/SideBar';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
 import 'bootswatch/dist/simplex/bootstrap.min.css';
@@ -9,7 +8,6 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [noteData, setNoteData]= useState([]);
   const [notes,setNotes] = useState([]);
 
   useEffect(() => {
@@ -19,7 +17,7 @@ function App() {
   function getData(){
     fetch(`http://localhost:3000/notes`)
       .then(response => response.json())
-      .then(setNoteData)
+      .then(setNotes)
   }
 
   function addNote(color){
@@ -66,10 +64,9 @@ function App() {
         <Routes>
           <Route path='/' element={<App />} />
           <Route path='/LoginContainer'  element={<LoginContainer />} />
-          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {noteData} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
+          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
         </Routes>
       </div>
-      <div><h4 className="bottom">Thank you for using Rainbow Note!</h4></div>
     </div>
   );
 }

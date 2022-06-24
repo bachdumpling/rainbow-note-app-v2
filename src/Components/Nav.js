@@ -1,4 +1,4 @@
-import { getValue } from '@testing-library/user-event/dist/utils';
+//import { getValue } from '@testing-library/user-event/dist/utils';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header'
@@ -17,9 +17,9 @@ const Nav =()=>{
                 <li id="note" className='active'>
                     <Link to="/note">Note</Link>
                 </li>
-                {/* <li className='active'>
-                    <Link to="/SideBar"></Link>
-                </li> */}
+                <li className='active'>
+                    <Link to="/about">About</Link>
+                </li>
             </ul>
         </nav>
     )
