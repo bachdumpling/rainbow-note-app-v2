@@ -3,8 +3,9 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
-//import 'bootswatch/dist/simplex/bootstrap.min.css';
+import 'bootswatch/dist/simplex/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import About from './Components/About';
 
 function App() {
 
@@ -17,12 +18,14 @@ function App() {
   function getData(){
     fetch(`http://localhost:3000/notes`)
       .then(response => response.json())
-      .then(setNotes)
+      .then(data=> 
+        setNotes(data)
+        )
   }
 
   function addNote(color){
     let newNote = [...notes]
-
+//console.log('log')
     newNote.push({
       text: '',
       color,
@@ -38,7 +41,7 @@ function App() {
                 "Content-Type": "application/json"
             }
         })
-        getData()
+       getData()
   }
 
   function handleSubmit(e){
@@ -61,10 +64,11 @@ function App() {
     <div className="App">
       <Nav />
       <div className='container'>
+        {/* <h1>hello!</h1> */}
         <Routes>
-          <Route path='/' element={<App />} />
           <Route path='/LoginContainer'  element={<LoginContainer />} />
           <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
+          <Route path='/About' element={<About />} />
         </Routes>
       </div>
     </div>

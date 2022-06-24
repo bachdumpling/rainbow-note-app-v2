@@ -1,7 +1,7 @@
 //import { getValue } from '@testing-library/user-event/dist/utils';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header'
+import Header from './Header';
 
 
 const Nav =()=>{
@@ -11,7 +11,7 @@ const Nav =()=>{
                 <Header />
             </div>
             <ul>
-                <li id="account" class='active'>
+                <li id="account" className='active'>
                     <Link to="/LoginContainer">Account</Link>
                 </li>    
                 <li id="note" className='active'>
