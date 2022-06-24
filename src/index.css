@@ -35,10 +35,10 @@ code {
   justify-content: space-between;
 }
 
-.nav a {
+/* .nav a {
   color: black;
   text-decoration: none;
-}
+} */
 
 .login-container {
   width:50%;
@@ -50,6 +50,10 @@ code {
   left: 45px;
   top: 30px;
   height: 100px
+}
+
+#sign-in{
+  text-align: center;
 }
 
 .sidebar {
@@ -97,6 +101,10 @@ code {
   flex-wrap: wrap;
   gap: 20px;
   
+}
+
+#note-title{
+  text-align: center;
 }
 
 .note{

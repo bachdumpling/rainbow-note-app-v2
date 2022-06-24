@@ -1,5 +1,3 @@
-//import { getValue } from '@testing-library/user-event/dist/utils';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 
@@ -7,8 +5,8 @@ import Header from './Header';
 const Nav =()=>{
     return(
         <nav className="nav">
-            <div className="header">
-                <Header />
+            <div className="active">
+               <Header />
             </div>
             <ul>
                 <li id="account" className='active'>

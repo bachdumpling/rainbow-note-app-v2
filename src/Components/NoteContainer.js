@@ -1,8 +1,7 @@
-import React from 'react'
 import Note from './Note'
 import SideBar from './SideBar'
 
-function NoteContainer({notes, removeNote}) {
+function NoteContainer({notes, addNote, removeNote}) {
     console.log(notes)  
   
     const noteCards = notes.map((item) => {
@@ -11,7 +10,8 @@ function NoteContainer({notes, removeNote}) {
   
     return (
     <div className='note-container'>
-        <h2>Take A Note</h2>
+        <h2 id="note-title" className="text-info mt-3">Note</h2>  
+        <SideBar addNoteProp={addNote} />
         <div className='note-containter-notes custom-scroll'>
             {noteCards}
         </div>

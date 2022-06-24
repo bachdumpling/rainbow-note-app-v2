@@ -19,19 +19,24 @@ function App() {
     fetch(`http://localhost:4000/notes`)
       .then(response => response.json())
       .then(data=> 
-        setNotes(data)
-        )
+        setNotes(data))
   }
 
   function addNote(color){
-    let newNote = [...notes]
-//console.log('log')
-    newNote.push({
-      text: '',
-      color,
-    })
+    const newNote = {
+      text : "",
+      time : "13 July",
+      color : color
+    }
 
-    setNotes(newNote)
+    fetch(`http://localhost:4000/notes`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+        },
+            body: JSON.stringify(newNote)
+    }).then(response => response.json())
+    .then((data) => setNotes([...notes, data]))
   }
 
   function removeNote(note){
@@ -41,7 +46,7 @@ function App() {
                 "Content-Type": "application/json"
             }
         })
-       getData()
+        getData()
   }
   
   return (
@@ -51,7 +56,7 @@ function App() {
         {/* <h1>hello!</h1> */}
         <Routes>
           <Route path='/LoginContainer'  element={<LoginContainer />} />
-          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote} handleSubmit={handleSubmit}/>} />
+          <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote}/>} />
           <Route path='/About' element={<About />} />
         </Routes>
       </div>

@@ -1,5 +1,4 @@
 import React,{useState, useEffect} from 'react'
-import "./Note.css";
 
 function Note({note, handleRemove}) {
     console.log(note)

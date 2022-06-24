@@ -32,8 +32,8 @@ function LoginContainer(){
     <div class="login-container">
         {(data.username !=="")? (
         <div>
-            <h2>Welcome, <span>{data.username}</span>!</h2>
-            <button type="button" class="btn btn-outline-dark btn-sm" onClick={Logout}>Logout</button>
+            <h2 className="text-info mt-4">Welcome, <span>{data.username}</span>!</h2>
+            <button type="button" class="btn btn-outline-dark btn-sm mt-4" onClick={Logout}>Logout</button>
         </div>
         ) : (
         <LoginForm Login={Login} error={error} /> 

@@ -4,12 +4,14 @@
       "id": 1,
       "text": "HELLO",
       "time": "13 July",
-<<<<<<< HEAD
       "color": "light blue",
       "hello": "hello"
-=======
-      "color": "light blue"
->>>>>>> 42c912784ff65c1aa2442c2d30bb30eec24e4643
+    },
+    {
+      "text": "fewjkhfjkewhfnwe",
+      "time": "13 July",
+      "color": "#fec971",
+      "id": 2
     }
   ]
 }
