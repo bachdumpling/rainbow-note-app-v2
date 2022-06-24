@@ -12,16 +12,12 @@ function App() {
   const [notes,setNotes] = useState([]);
 
   useEffect(() => {
-    getData()
-  },[])
-
-  function getData(){
     fetch(`http://localhost:3000/notes`)
-      .then(response => response.json())
-      .then(data=> 
-        setNotes(data)
-        )
-  }
+    .then(response => response.json())
+    .then(data=> 
+      setNotes(data)
+      )
+  },[])
 
   function addNote(color){
     let newNote = [...notes]
@@ -41,22 +37,17 @@ function App() {
                 "Content-Type": "application/json"
             }
         })
-       getData()
   }
 
   function handleSubmit(e){
     e.preventDefault();
-    console.log('submitting')
     console.log(e.target.value)
         fetch('http://localhost:3000/notes', {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
             'Content-Type': 'application/json'
         },
-            body: JSON.stringify({
-              text: e.target.value,
-              color: e.target.color
-            })
+            body: JSON.stringify()
         })
   }
 

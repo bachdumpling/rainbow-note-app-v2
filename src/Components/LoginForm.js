@@ -12,7 +12,7 @@ function LoginForm({ Login, error}){
       <div>
         <form onSubmit={submitHandler}>
           <div className="form-group mt-4">
-            <h4 class="form-label text-info">Account Sign In</h4>
+            <h2 id="sign-in" class="form-label text-info">Account Sign In</h2>
             {(error!== "") ? (<div>{error}</div>) : "" }
           </div>
           <div className="mt-4">

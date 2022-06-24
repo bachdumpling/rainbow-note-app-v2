@@ -1,5 +1,3 @@
-import React from 'react'
-
 
 function Note({note, handleRemove, handleSubmitProp}) {
 
@@ -8,7 +6,6 @@ function Note({note, handleRemove, handleSubmitProp}) {
     style={{backgroundColor:note.color}}>
         <textarea className='note_text' defaultValue={note.text} onChange={handleSubmitProp}/>
     <div>
-        {/* <p>{note.time}</p> */}
         <button id='delete-button'
         onClick={()=> handleRemove(note)}>🗑</button>
     </div>
