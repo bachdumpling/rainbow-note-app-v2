@@ -3,7 +3,7 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
-import 'bootswatch/dist/simplex/bootstrap.min.css';
+//import 'bootswatch/dist/simplex/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
