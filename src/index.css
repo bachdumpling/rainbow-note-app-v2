@@ -13,16 +13,16 @@ code {
     monospace;
 }
 
-.nav{
+.nav {
   background-color: white;
   color: rgb(156, 1, 14);
   font-size: 1.1rem;
   width: 100%;
-  align-items:center;
+  align-items: center;
   gap: 2rem;
   padding: 0;
   height: 60px;
-  justify-content:space-between;
+  justify-content: space-between;
   display: flex;
 }
 
@@ -41,93 +41,120 @@ code {
 } */
 
 .login-container {
-  width:50%;
+  width: 50%;
   margin: auto;
 }
 
-.note-container{
-  position:relative;
-  left: 45px;
-  top: 30px;
-  height: 100px
+
+
+#sign-in {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 600;
 }
 
-#sign-in{
-  text-align: center;
+
+.note-adder-container {
+  width: 100%;
+  display: inline-block;
+ 
 }
 
 .sidebar {
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 10px;
+  margin-top: 20px;
+  width: 5%;
+  float: left;
+  text-align: center;
+
+
 }
 
-.sidebar img{
+.sidebar img {
   height: 50px;
   width: 60px;
+
   cursor: pointer;
 }
 
-.sidebar_list{
+.sidebar_list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
-  align-items: left;
-  height: 0;
+  align-items: center;
+  height: 0px;
   transition: 300ms;
+
+  width: 100%;
+  padding: 0;
 }
 
-.sidebar_list_active{
+.sidebar_list_active {
   height: 300px;
+  padding: 0;
 }
 
-.sidebar_list_item{
+.sidebar_list_item {
   border-radius: 50%;
   height: 26px;
   width: 26px;
   list-style: none;
 }
 
-.note-container{
-  height: 100px;
+
+
+.note-container {
+  margin-top: 20px;
+  width: 95%;
+
+  float: right;
+ 
 }
 
-.note-container h2{
+.note-container h2 {
   margin: 20px;
+
 }
 
-.note-containter-notes{
+.note-containter-notes {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  
+
+
 }
 
-#note-title{
+#note-title {
   text-align: center;
+  font-size: 45px;
+  font-weight: 600;
 }
 
-.note{
+.note {
   padding: 25px;
   height: 280px;
-  width: 260px;
+  width: 18%;
+  margin: .5%;
   display: flex;
   flex-direction: column;
   background-color: rgb(167, 120, 210);
   border-radius: 30px;
+
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.174);
+  
 }
 
-.note_text{
+.note_text {
   flex: 1;
   resize: none;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.875rem;
   border: none;
   outline: none;
 }
 
-#delete-button{
+#delete-button {
   float: right;
   background-color: transparent;
   border: none;
@@ -136,6 +163,12 @@ code {
 }
 
 #about {
-  position:relative;
+  position: relative;
   text-align: center;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+#about-content{
+  font-size: 20px;
 }

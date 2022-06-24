@@ -1,16 +1,9 @@
 {
   "notes": [
     {
-      "id": 1,
-      "text": "HELLO",
+      "text": "Hello, how are you?",
       "time": "13 July",
-      "color": "light blue",
-      "hello": "hello"
-    },
-    {
-      "text": "fewjkhfjkewhfnwe",
-      "time": "13 July",
-      "color": "#fec971",
+      "color": "#fe9b72 ",
       "id": 2
     }
   ]

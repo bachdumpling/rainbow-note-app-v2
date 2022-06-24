@@ -3,7 +3,7 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import LoginContainer from './Components/LoginContainer';
 import Nav from './Components/Nav';
-import 'bootswatch/dist/simplex/bootstrap.min.css';
+import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import About from './Components/About';
 
@@ -52,14 +52,11 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <div className='container'>
-        {/* <h1>hello!</h1> */}
         <Routes>
           <Route path='/LoginContainer'  element={<LoginContainer />} />
           <Route path='/Note' element= {<NoteContainer addNote={addNote} notes = {notes} removeNote={removeNote}/>} />
           <Route path='/About' element={<About />} />
         </Routes>
-      </div>
     </div>
   );
 }
